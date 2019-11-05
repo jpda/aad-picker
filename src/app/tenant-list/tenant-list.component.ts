@@ -73,6 +73,6 @@ export class TenantListComponent {
   private getSubscriptions(token: string): Observable<any> {
     let headers = new HttpHeaders();
     headers = headers.set("Authorization", "Bearer " + token);
-    return this.http.get(SUBSCRIPTION_URL).pipe();
+    return this.http.get(SUBSCRIPTION_URL, { headers }).pipe();
   }
 }
