@@ -47,8 +47,9 @@ export class TenantListComponent {
         console.error(e);
       }
     }
+    console.log("token acquired for " + tenantId);
     if (token !== "") {
-      console.debug("fetching subscriptions for " + tenantId + " with " + token)
+      console.log("fetching subscriptions for " + tenantId + " with " + token)
       var subs = await this.getSubscriptions(token).toPromise();
       this.subList = subs.value;
     }
