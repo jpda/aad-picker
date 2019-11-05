@@ -49,14 +49,12 @@ export class TenantListComponent {
     }
     console.log("token acquired for " + tenantId);
     if (token !== "") {
-      console.log("fetching subscriptions for " + tenantId + " with " + token)
       var subs = await this.getSubscriptions(token).toPromise();
       this.subList = subs.value;
     }
   }
 
   subscriptionChanged(subscriptionId: string) {
-    console.log("chose " + subscriptionId);
     var selectedSubscription = this.subList.find(x => x.subscriptionId == subscriptionId);
     this.subInfo = JSON.stringify(selectedSubscription, null, 2);
   }
