@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material'
+import { environment } from 'src/environments/environment';
 
 const CLIENT_ID = '0adf5f12-ebda-4adf-a3f1-475c4809a514';
 const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
@@ -22,11 +23,10 @@ const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
   imports: [
     MsalModule.forRoot({
       clientID: CLIENT_ID,
+      redirectUri: environment.aadRedirectUrl,
       cacheLocation: 'localStorage',
       consentScopes: [SMAPI_SCOPE, "User.Read"],
-      protectedResourceMap: [["https://management.azure.com/", [SMAPI_SCOPE]]],
-      level: LogLevel.Verbose,
-      piiLoggingEnabled: true
+      protectedResourceMap: [["https://management.azure.com/", [SMAPI_SCOPE]]]
     }),
     BrowserModule,
     AppRoutingModule,
