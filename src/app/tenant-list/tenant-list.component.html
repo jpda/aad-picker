@@ -1,0 +1,22 @@
+<div>
+    <h2>tenants</h2>
+    <mat-form-field style="width:100%;">
+        <mat-select (valueChange)="tenantChanged($event)" aria-placeholder="Choose a tenant..."
+            placeholder="Choose a tenant...">
+            <mat-option *ngFor="let t of tenantList" value="{{t.tenantId}}">
+                {{t.tenantId}} ({{ t.displayName == null ? "none" : t.displayName }})
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field style="width:100%;">
+        <mat-select (valueChange)="subscriptionChanged($event)" aria-placeholder="Choose a subscription..."
+            placeholder="Choose a subscription...">
+            <mat-option *ngFor="let s of subList" value="{{s.subscriptionId}}">
+                {{s.displayName}} ({{ s.subscriptionId }})
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <pre>{{subInfo}}</pre>
+</div>
