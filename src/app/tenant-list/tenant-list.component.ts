@@ -26,6 +26,7 @@ export class TenantListComponent {
   }
   async tenantChanged(tenantId: string) {
     this.subList = [];
+    this.subInfo = "";
     console.log("entering tenant change event, got tenant " + tenantId);
     var authority = "https://login.microsoftonline.com/" + tenantId;
 
@@ -37,7 +38,7 @@ export class TenantListComponent {
       token = await tenantScopedTokenClient.acquireTokenSilent(scopes, authority);
     } catch (e) {
       try {
-        if (e.indexOf("interaction_required") > -1) {
+        if (e.indexOf("interaction_required") > -1 || e.indexOf("consent_required") > -1) {
           token = await tenantScopedTokenClient.acquireTokenPopup(scopes, authority);
         } else {
           console.error(e);
@@ -54,7 +55,7 @@ export class TenantListComponent {
 
   subscriptionChanged(subscriptionId: string) {
     console.log("chose " + subscriptionId);
-    var selectedSubscription = this.subList.find(x=>x.subscriptionId == subscriptionId);
+    var selectedSubscription = this.subList.find(x => x.subscriptionId == subscriptionId);
     this.subInfo = JSON.stringify(selectedSubscription, null, 2);
   }
 
