@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 const TENANT_URL = "https://management.azure.com/tenants?api-version=2019-06-01";
 const SUBSCRIPTION_URL = "https://management.azure.com/subscriptions?api-version=2019-06-01";
 const scopes = ["https://management.azure.com/user_impersonation"];
-const CLIENT_ID = "a1ea64ac-fc16-460a-8ab6-209b989d6dae";
+const CLIENT_ID = "0adf5f12-ebda-4adf-a3f1-475c4809a514";
 
 @Component({
   selector: 'app-tenant-list',

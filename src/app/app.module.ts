@@ -11,7 +11,7 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material'
 
-const CLIENT_ID = 'a1ea64ac-fc16-460a-8ab6-209b989d6dae';
+const CLIENT_ID = '0adf5f12-ebda-4adf-a3f1-475c4809a514';
 const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
 
 @NgModule({
