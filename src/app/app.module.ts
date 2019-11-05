@@ -14,10 +14,6 @@ import { MatSelectModule } from '@angular/material'
 const CLIENT_ID = '0adf5f12-ebda-4adf-a3f1-475c4809a514';
 const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
 
-export function redirectUri(){
-  return `${window.location.origin}/`;
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +22,6 @@ export function redirectUri(){
   imports: [
     MsalModule.forRoot({
       clientID: CLIENT_ID,
-      redirectUri: redirectUri(),
       cacheLocation: 'localStorage',
       consentScopes: [SMAPI_SCOPE, "User.Read"],
       protectedResourceMap: [["https://management.azure.com/", [SMAPI_SCOPE]]],

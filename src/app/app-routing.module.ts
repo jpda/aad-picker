@@ -5,8 +5,7 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "tenants", pathMatch: "full" },
-  { path: "tenants", component: TenantListComponent, canActivate: [MsalGuard] }
+  { path: "", component: TenantListComponent, canActivate: [MsalGuard] }
 ];
 
 @NgModule({
