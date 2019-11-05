@@ -48,6 +48,7 @@ export class TenantListComponent {
       }
     }
     if (token !== "") {
+      console.debug("fetching subscriptions for " + tenantId + " with " + token)
       var subs = await this.getSubscriptions(token).toPromise();
       this.subList = subs.value;
     }
