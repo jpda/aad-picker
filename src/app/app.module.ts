@@ -15,7 +15,7 @@ const CLIENT_ID = '0adf5f12-ebda-4adf-a3f1-475c4809a514';
 const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
 
 export function redirectUri(){
-  return window.location.origin;
+  return `${window.location.origin}/`;
 }
 
 @NgModule({
