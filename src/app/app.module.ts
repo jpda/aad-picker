@@ -26,7 +26,7 @@ const SMAPI_SCOPE = "https://management.azure.com/user_impersonation";
       redirectUri: environment.aadRedirectUrl,
       cacheLocation: 'localStorage',
       consentScopes: [SMAPI_SCOPE, "User.Read"],
-      protectedResourceMap: [["https://management.azure.com/", [SMAPI_SCOPE]]]
+      protectedResourceMap: [["https://management.azure.com/tenants", [SMAPI_SCOPE]]]
     }),
     BrowserModule,
     AppRoutingModule,
